@@ -17,8 +17,8 @@ export default function ShowMultipleCards({ data }: { data: CardDataType[] }) {
   console.log("Paginated Cards", paginatedCards);
 
   return (
-    <div className="flex container max-w-6xl gap-4 w-full flex-col">
-      <div className="flex flex-wrap gap-4 justify-center">
+    <div className="flex container max-w-6xl justify-center gap-4 w-full flex-col">
+      <div className="flex flex-wrap gap-4 justify-center p-5">
         {paginatedCards.map(
           (obj: {
             userId: number;
@@ -30,6 +30,7 @@ export default function ShowMultipleCards({ data }: { data: CardDataType[] }) {
           }
         )}
       </div>
+
       <div>
         <PaginationComponent
           totalCards={data.length}
