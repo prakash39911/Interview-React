@@ -1,6 +1,6 @@
 "use client";
 
-import MultipleCards from "@/components/MultipleCards";
+import ShowMultipleCards from "@/components/ShowMultipleCards";
 import { cardStore } from "@/lib/store/cardStore";
 import { useEffect, useState } from "react";
 
@@ -41,8 +41,8 @@ export default function Home() {
   }
 
   return (
-    <div className="flex w-full justify-center items-center">
-      <MultipleCards data={cards} />
+    <div className="flex w-full justify-center items-center bg-gray-300 p-10">
+      <ShowMultipleCards data={cards} />
     </div>
   );
 }

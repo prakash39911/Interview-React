@@ -5,7 +5,7 @@ import CardComponent from "./CardComponent";
 import { PaginationComponent } from "./PaginationComponent";
 import { CardDataType } from "@/types/type";
 
-export default function MultipleCards({ data }: { data: CardDataType[] }) {
+export default function ShowMultipleCards({ data }: { data: CardDataType[] }) {
   const [currentPage, setCurrentPage] = useState(1);
   const cardsPerPage = 6;
 
