@@ -1,7 +1,6 @@
 import {
   Pagination,
   PaginationContent,
-  PaginationEllipsis,
   PaginationItem,
   PaginationLink,
   PaginationNext,
@@ -20,9 +19,21 @@ export function PaginationComponent({
   onPageChange: (page: number) => void;
 }) {
   const totalPages = Math.ceil(totalCards / cardsPerPage);
+
+  let startPage = Math.max(1, currentPage - 1);
+  let endPage = Math.min(totalPages, currentPage + 1);
+
+  if (currentPage <= 2) {
+    endPage = Math.min(3, totalPages);
+  }
+
+  if (currentPage >= totalPages - 1) {
+    startPage = Math.max(totalPages - 2, 1);
+  }
+
   const pageNumbers = [];
 
-  for (let i = 1; i <= totalPages; i++) {
+  for (let i = startPage; i <= endPage; i++) {
     pageNumbers.push(i);
   }
 
